@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 void rev(int arr[], int i) {
-	int temp, st = 0;
-	while (st < i) 
+	int st = 0;
+	while(st < i) 
 	{
 		swap(arr[st], arr[i]);
 		st++;
@@ -18,7 +18,7 @@ int maxIndex(int arr[], int n) {
 	}
 	return index;
 }
-int pancakeSort(int arr[], int n) {
+void pancakeSort(int arr[], int n) {
 	for (int size = n; size > 1; size--) 
 	{
 		int index = maxIndex(arr, size);
@@ -30,7 +30,8 @@ int pancakeSort(int arr[], int n) {
 		}
 	}
 }
-int main() {
+int main() 
+{
 	int arr[] = { 54, 85, 52, 25, 98, 75, 25, 11, 68 };
 	int n = sizeof(arr) / sizeof(arr[0]);
 	pancakeSort(arr, n);
